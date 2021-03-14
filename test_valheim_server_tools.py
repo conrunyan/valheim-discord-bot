@@ -33,11 +33,23 @@ class TestGetActivePlayers:
 
 class TestGetLoginEvents:
     def test_get_login_events_no_zoids(self, log_data):
-        expected = [
-            {"692335600": {"username": "", "timestamp": ""}},
-            {"561945071": {"username": "", "timestamp": ""}},
-            {"1555652395": {"username": "", "timestamp": ""}},
-        ]
+        expected = {
+            "692335600": {
+                "username": "Lars",
+                "timestamp": "03/14/2021 07:14:33",
+                "action": "LOG_IN",
+            },
+            "561945071": {
+                "username": "Lars",
+                "timestamp": "03/14/2021 07:17:25",
+                "action": "LOG_IN",
+            },
+            "1555652395": {
+                "username": "Bubbert",
+                "timestamp": "03/14/2021 07:21:40",
+                "action": "LOG_IN",
+            },
+        }
         result = get_login_events(log_data)
         assert expected == result
 

@@ -23,10 +23,9 @@ SOFTWARE.
 """
 import re
 
-from enum import Enum
 from typing import Dict, List
 
-class PlayerAction(Enum):
+class PlayerAction():
     LOG_IN = "LOG_IN"
     LOG_OUT = "LOG_OUT"
 
