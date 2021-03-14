@@ -32,7 +32,7 @@ class TestGetActivePlayers:
 
 
 class TestGetLoginEvents:
-    def test_get_login_events_with_valid(self, log_data):
+    def test_get_player_events_with_valid(self, log_data):
         expected = {
             "692335600": {
                 "username": "Lars",
@@ -53,10 +53,14 @@ class TestGetLoginEvents:
         result = get_player_events(log_data, action_type=PlayerAction.LOG_IN)
         assert expected == result
 
-    def test_get_login_events_no_zoids(self, log_data_no_zoids):
+    def test_get_player_events_no_zoids(self, log_data_no_zoids):
         expected = {}
         result = get_player_events(log_data_no_zoids, action_type=PlayerAction.LOG_IN)
         assert expected == result
+    
+    def test_get_player_events_invalid_action_type(self):
+        with pytest.raises(ValueError):
+            get_player_events("", "TOTALY REAL EVENT TYPE")
 
 class TestGetLogoutEvents:
     pass
