@@ -23,8 +23,8 @@ SOFTWARE.
 """
 import pytest
 
-from testing_resources import (log_data, log_data_no_zoids)
-from valheim_server_tools import (get_player_events, PlayerAction)
+from testing_resources import log_data, log_data_no_zoids
+from valheim_server_tools import get_player_events, PlayerAction
 
 
 class TestGetActivePlayers:
@@ -57,10 +57,11 @@ class TestGetLoginEvents:
         expected = {}
         result = get_player_events(log_data_no_zoids, action_type=PlayerAction.LOG_IN)
         assert expected == result
-    
+
     def test_get_player_events_invalid_action_type(self):
         with pytest.raises(ValueError):
             get_player_events("", "TOTALY REAL EVENT TYPE")
+
 
 class TestGetLogoutEvents:
     pass
