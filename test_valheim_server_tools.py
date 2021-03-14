@@ -32,7 +32,7 @@ class TestGetActivePlayers:
 
 
 class TestGetLoginEvents:
-    def test_get_player_events_with_valid(self, log_data):
+    def test_get_login_events_with_valid_zoids(self, log_data):
         expected = {
             "692335600": {
                 "username": "Lars",
@@ -53,7 +53,7 @@ class TestGetLoginEvents:
         result = get_player_events(log_data, action_type=PlayerAction.LOG_IN)
         assert expected == result
 
-    def test_get_player_events_no_zoids(self, log_data_no_zoids):
+    def test_get_login_events_no_zoids(self, log_data_no_zoids):
         expected = {}
         result = get_player_events(log_data_no_zoids, action_type=PlayerAction.LOG_IN)
         assert expected == result
@@ -64,4 +64,23 @@ class TestGetLoginEvents:
 
 
 class TestGetLogoutEvents:
-    pass
+    def test_get_logout_events(self, log_data):
+        expected = {
+            "692335600": {
+                "username": "",
+                "timestamp": "03/14/2021 07:15:02",
+                "action": "LOG_OUT",
+            },
+            "561945071": {
+                "username": "",
+                "timestamp": "03/14/2021 07:17:37",
+                "action": "LOG_OUT",
+            },
+            "1555652395": {
+                "username": "",
+                "timestamp": "03/14/2021 11:47:52",
+                "action": "LOG_OUT",
+            },
+        }
+        result = get_player_events(log_data, action_type=PlayerAction.LOG_OUT)
+        assert expected == result

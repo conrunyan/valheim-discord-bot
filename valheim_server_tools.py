@@ -54,7 +54,7 @@ def get_player_events(
         )
     elif action_type == PlayerAction.LOG_OUT:
         re_event_pattern = re.compile(
-            r"(?P<timestamp>\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2}).*Destroying abandoned non persistent zdo (?P<connect_id>\d+):1"
+            r"(?P<timestamp>\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2}).*Destroying abandoned non persistent zdo (?P<connect_id>\d+):"
         )
     else:
         raise ValueError(
@@ -64,8 +64,8 @@ def get_player_events(
     events_found = [l.groupdict() for l in re_event_pattern.finditer(log_contents)]
     if events_found:
         return {
-            event.get("connect_id"): _create_player_activity_info(
-                event, PlayerAction.LOG_IN
+            event.get("connect_id", ""): _create_player_activity_info(
+                event, action_type
             )
             for event in events_found
         }
@@ -76,8 +76,8 @@ def _create_player_activity_info(
     found_results: Dict[str, str], action: PlayerAction
 ) -> Dict[str, str]:
     return {
-        "username": found_results.get("username"),
-        "timestamp": found_results.get("timestamp"),
+        "username": found_results.get("username", ""),
+        "timestamp": found_results.get("timestamp", ""),
         "action": action,
     }
 
