@@ -33,6 +33,7 @@ class PlayerAction:
 
 
 def get_active_players(log_path: str) -> List[str]:
+    breakpoint()
     with open(log_path) as IFH:
         log_data = IFH.read()
     logged_in_events = get_player_events(log_contents=log_data, action_type=PlayerAction.LOG_IN)
