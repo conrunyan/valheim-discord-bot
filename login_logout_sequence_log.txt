@@ -1,0 +1,107 @@
+Mar 14 07:14:13 localhost start_valheim.sh[12067]:  
+Mar 14 07:14:13 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:14:33 localhost start_valheim.sh[12067]: 03/14/2021 07:14:33: Got character ZDOID from Lars : 692335600:1
+Mar 14 07:14:33 localhost start_valheim.sh[12067]:  
+Mar 14 07:14:33 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:01 localhost CRON[5248]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: 03/14/2021 07:15:02: RPC_Disconnect
+Mar 14 07:15:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: 03/14/2021 07:15:02: Destroying abandoned non persistent zdo 692335600:1 owner 692335600
+Mar 14 07:15:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: 03/14/2021 07:15:02: Destroying abandoned non persistent zdo 692335600:12 owner 692335600
+Mar 14 07:15:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: 03/14/2021 07:15:02: Destroying abandoned non persistent zdo 692335600:13 owner 692335600
+Mar 14 07:15:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: 03/14/2021 07:15:02: Disposing socket
+Mar 14 07:15:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: 03/14/2021 07:15:02: Closing socket 76561198031856787
+Mar 14 07:15:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: 03/14/2021 07:15:02:   send queue size:0
+Mar 14 07:15:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: 03/14/2021 07:15:03: Disposing socket
+Mar 14 07:15:03 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: 03/14/2021 07:15:03: Got status changed msg k_ESteamNetworkingConnectionState_ClosedByPeer
+Mar 14 07:15:03 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: 03/14/2021 07:15:03: Socket closed by peer Steamworks.SteamNetConnectionStatusChangedCallback_t
+Mar 14 07:15:03 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: 03/14/2021 07:15:03: Got status changed msg k_ESteamNetworkingConnectionState_None
+Mar 14 07:15:03 localhost start_valheim.sh[12067]:  
+Mar 14 07:15:03 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:01 localhost CRON[5347]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: Got status changed msg k_ESteamNetworkingConnectionState_Connecting
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: New connection
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: Accepting connection k_EResultOK
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: Connecting to Steamworks.SteamNetworkingIdentity
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: Got status changed msg k_ESteamNetworkingConnectionState_Connected
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: Connected
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: Got connection SteamID 76561198031856787
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: 03/14/2021 07:17:02: Got handshake from client 76561198031856787
+Mar 14 07:17:02 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:02 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:05 localhost start_valheim.sh[12067]: 03/14/2021 07:17:05: VERSION check their:0.147.3  mine:0.147.3
+Mar 14 07:17:05 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:05 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:05 localhost start_valheim.sh[12067]: 03/14/2021 07:17:05: Server: New peer connected,sending global keys
+Mar 14 07:17:05 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:05 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+
+#######################################
+# LOGIN EVEN FOR Lars
+#######################################
+Mar 14 07:17:25 localhost start_valheim.sh[12067]: 03/14/2021 07:17:25: Got character ZDOID from Lars : 561945071:1
+Mar 14 07:17:25 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:25 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: RPC_Disconnect
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+#######################################
+# LOGOUT EVENT FOR Largs See non-persistent zdo 561945071 matches ZDOID in LOGIN
+#######################################
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: Destroying abandoned non persistent zdo 561945071:1 owner 561945071
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: Disposing socket
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: Closing socket 76561198031856787
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37:   send queue size:0
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: Disposing socket
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: Got status changed msg k_ESteamNetworkingConnectionState_ClosedByPeer
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: Socket closed by peer Steamworks.SteamNetConnectionStatusChangedCallback_t
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: 03/14/2021 07:17:37: Got status changed msg k_ESteamNetworkingConnectionState_None
+Mar 14 07:17:37 localhost start_valheim.sh[12067]:  
+Mar 14 07:17:37 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
