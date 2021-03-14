@@ -24,6 +24,7 @@ SOFTWARE.
 import pytest
 
 from testing_resources import log_data
+from valheim_server_tools import get_login_events
 
 
 class TestGetActivePlayers:
@@ -31,7 +32,14 @@ class TestGetActivePlayers:
 
 
 class TestGetLoginEvents:
-    pass
+    def test_get_login_events_no_zoids(self, log_data):
+        expected = [
+            {"692335600": {"username": "", "timestamp": ""}},
+            {"561945071": {"username": "", "timestamp": ""}},
+            {"1555652395": {"username": "", "timestamp": ""}},
+        ]
+        result = get_login_events(log_data)
+        assert expected == result
 
 
 class TestGetLogoutEvents:
