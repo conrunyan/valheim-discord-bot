@@ -43,6 +43,10 @@ def get_active_players(log_path: str) -> List[str]:
     return {conn_id:_create_player_activity_info(p_vals, PlayerAction.ONLINE) for conn_id, p_vals in active_players.items()}
 
 
+def format_active_player_message(active_players: Dict[str, str]) -> str:
+    pass
+
+
 def get_player_events(
     log_contents: str, action_type: PlayerAction
 ) -> Dict[str, Dict[str, str]]:

@@ -46,9 +46,10 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-
-    if message.content.lower().startswith("$valheim"):
-        await message.channel.send("Hi there!")
+    clean_content = message.content.lower().strip()
+    if clean_content.startswith("$valheim"):
+        output_message = handle_input(clean_content)
+        await message.channel.send(output_message)
 
 
 def handle_input(message: str) -> str:
@@ -60,7 +61,33 @@ def handle_input(message: str) -> str:
     Returns:
         str: Output message to be sent back to discord.
     """
+    message_pieces = message.split()
+    if len(message_pieces) > 1:
+        action = message_pieces[1]
+        if action == "help":
+            return usage()
+        elif action == "players":
+            return "Players!"
+        elif action == "status":
+            return "Status!"
+        else:
+            return "By Odin's beard... your language confuses me. (Try '$valheim help' for a list of actions)"
+    # Input isn't in the right format! better display the help message
+    else:
+        return usage()
 
+def usage() -> str:
+    return """
+Usage: $valheim [action]
+
+Valid actions:
+    players - Shows a list of players currently online.
+    status - Shows current server status.
+    help - Shows this message.
+
+Example:
+    $valheim players
+"""
 
 if __name__ == "__main__":
     main()
