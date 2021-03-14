@@ -24,15 +24,25 @@ SOFTWARE.
 import pytest
 
 from testing_resources import log_data, log_data_no_zoids
-from valheim_server_tools import get_player_events, PlayerAction
+from valheim_server_tools import get_player_events, PlayerAction, get_active_players
 
 
 class TestGetActivePlayers:
-    pass
+    def test_get_active_players_one_logged_in(self):
+        log_path = "./resources/sample_log.txt"
+        expected = {
+            "123456789": {
+                "username": "Velma",
+                "timestamp": "03/14/2021 08:00:26",
+                "action": "ONLINE",
+            },
+        }
+        result = get_active_players(log_path)
+        assert expected == result
 
 
 class TestGetLoginEvents:
-    def test_get_login_events_with_valid_zoids(self, log_data):
+    def test_get_login_events_with_valid_zdoids(self, log_data):
         expected = {
             "692335600": {
                 "username": "Lars",
@@ -53,7 +63,7 @@ class TestGetLoginEvents:
         result = get_player_events(log_data, action_type=PlayerAction.LOG_IN)
         assert expected == result
 
-    def test_get_login_events_no_zoids(self, log_data_no_zoids):
+    def test_get_login_events_no_zdoids(self, log_data_no_zoids):
         expected = {}
         result = get_player_events(log_data_no_zoids, action_type=PlayerAction.LOG_IN)
         assert expected == result

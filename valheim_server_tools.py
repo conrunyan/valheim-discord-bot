@@ -29,10 +29,18 @@ from typing import Dict, List
 class PlayerAction:
     LOG_IN = "LOG_IN"
     LOG_OUT = "LOG_OUT"
+    ONLINE = "ONLINE"
 
 
 def get_active_players(log_path: str) -> List[str]:
-    pass
+    with open(log_path) as IFH:
+        log_data = IFH.read()
+    logged_in_events = get_player_events(log_contents=log_data, action_type=PlayerAction.LOG_IN)
+    logged_out_events = get_player_events(log_contents=log_data, action_type=PlayerAction.LOG_OUT)
+    # Want all the players who have logged in, and do not have an associated logged out event
+    active_player_ids = logged_in_events.keys() - logged_out_events.keys()
+    active_players = dict(filter(lambda pair: pair[0] in active_player_ids, logged_in_events))
+    return {conn_id:_create_player_activity_info(p_vals, PlayerAction.ONLINE) for conn_id, p_vals in active_players.items()}
 
 
 def get_player_events(
@@ -45,7 +53,7 @@ def get_player_events(
         action_type (PlayerAction): Type of event to look for in the log (i.e. Login or Logout).
 
     Returns:
-        Dict[str, str]: Key value pairs of format {"zoid": {"username": "", "timestamp": ""}}.
+        Dict[str, str]: Key value pairs of format {"connect_id": {"username": "", "timestamp": ""}}.
     """
     re_event_pattern = None
     if action_type == PlayerAction.LOG_IN:
