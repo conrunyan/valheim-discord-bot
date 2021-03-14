@@ -23,26 +23,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import discord
+import logging
 import os
+import sys
 
 from dotenv import load_dotenv
-from valheim_server_tools import get_active_players, format_active_player_message
 
-load_dotenv()
+from valheim_server_tools import (
+    get_active_players,
+    format_active_player_message,
+    get_server_status,
+)
 
-BOT_KEY = os.getenv("TOKEN")
+
 SYS_LOG = "/var/log/syslog"
 client = discord.Client()
+logger = logging.getLogger(__name__)
 
 
 def main():
+    load_dotenv()
+    start_logger()
+    bot_key = os.getenv("TOKEN")
     # TODO: Add logging!
-    client.run(BOT_KEY)
+    logger.info("Starting up Heimdall discord bot!")
+    client.run(bot_key)
 
 
 @client.event
 async def on_ready():
-    print(f"Logged in as {client.user}")
+    logger.info(f"Bot logged in as {client.user}")
 
 
 @client.event
@@ -51,7 +61,9 @@ async def on_message(message):
         return
     clean_content = message.content.lower().strip()
     if clean_content.startswith("$valheim"):
+        logger.info(f"Received message '{clean_content}'' from user '{message.author}'")
         output_message = handle_input(clean_content)
+        logger.info(f"Responding with '{output_message}'")
         await message.channel.send(output_message)
 
 
@@ -75,7 +87,7 @@ def handle_input(message: str) -> str:
                 return format_active_player_message(active_players)
             return "No souls currently walk these lands..."
         elif action == "status":
-            return "Coming soon..."
+            return get_server_status()
         elif action == "info":
             return "Coming soon..."
         else:
@@ -98,6 +110,14 @@ Valid actions:
 Example:
     $valheim players
 """
+
+
+def start_logger():
+    logger.setLevel(logging.INFO)
+    ch = logging.StreamHandler(sys.stdout)
+    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
 
 
 if __name__ == "__main__":
