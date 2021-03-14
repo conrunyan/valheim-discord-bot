@@ -24,7 +24,7 @@ SOFTWARE.
 import pytest
 
 from testing_resources import (log_data, log_data_no_zoids)
-from valheim_server_tools import get_login_events
+from valheim_server_tools import (get_player_events, PlayerAction)
 
 
 class TestGetActivePlayers:
@@ -50,12 +50,12 @@ class TestGetLoginEvents:
                 "action": "LOG_IN",
             },
         }
-        result = get_login_events(log_data)
+        result = get_player_events(log_data, action_type=PlayerAction.LOG_IN)
         assert expected == result
 
     def test_get_login_events_no_zoids(self, log_data_no_zoids):
         expected = {}
-        result = get_login_events(log_data_no_zoids)
+        result = get_player_events(log_data_no_zoids, action_type=PlayerAction.LOG_IN)
         assert expected == result
 
 class TestGetLogoutEvents:
