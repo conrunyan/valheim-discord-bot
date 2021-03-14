@@ -21,16 +21,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-import pytest
 import re
 
 from typing import Dict, List
 
+
 def get_active_players(log_path: str) -> List[str]:
     pass
 
+
 def get_login_events(log_contents: List[str]) -> Dict[str, str]:
     pass
+
 
 def get_logout_events(log_contents: List[str]) -> Dict[str, str]:
     pass
