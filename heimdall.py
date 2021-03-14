@@ -26,21 +26,41 @@ import discord
 import os
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 BOT_KEY = os.getenv("TOKEN")
 client = discord.Client()
 
+
+def main():
+    client.run(BOT_KEY)
+
+
 @client.event
 async def on_ready():
     print(f"Logged in as {client.user}")
+
 
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
-    
-    if message.content.startswith("$hello"):
+
+    if message.content.lower().startswith("$valheim"):
         await message.channel.send("Hi there!")
 
-client.run(BOT_KEY)
+
+def handle_input(message: str) -> str:
+    """Generates an output message depending on what is received.
+
+    Args:
+        message (str): Raw message received straight from Discord.
+
+    Returns:
+        str: Output message to be sent back to discord.
+    """
+
+
+if __name__ == "__main__":
+    main()
