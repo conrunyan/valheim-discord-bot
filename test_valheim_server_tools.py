@@ -24,7 +24,12 @@ SOFTWARE.
 import pytest
 
 from testing_resources import log_data, log_data_no_zoids
-from valheim_server_tools import get_player_events, PlayerAction, get_active_players
+from valheim_server_tools import (
+    get_player_events,
+    PlayerAction,
+    get_active_players,
+    format_active_player_message,
+)
 
 
 class TestGetActivePlayers:
@@ -38,6 +43,13 @@ class TestGetActivePlayers:
             },
         }
         result = get_active_players(log_path)
+        assert expected == result
+
+    def test_format_active_player_message(self):
+        log_path = "./resources/sample_log.txt"
+        expected = "Name, Logged-in:\nVelma,03/14/2021 08:00:26 UTC"
+        active_players = get_active_players(log_path)
+        result = format_active_player_message(active_players)
         assert expected == result
 
 

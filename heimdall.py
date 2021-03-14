@@ -26,14 +26,17 @@ import discord
 import os
 
 from dotenv import load_dotenv
+from valheim_server_tools import get_active_players, format_active_player_message
 
 load_dotenv()
 
 BOT_KEY = os.getenv("TOKEN")
+SYS_LOG = "/var/log/syslog"
 client = discord.Client()
 
 
 def main():
+    # TODO: Add logging!
     client.run(BOT_KEY)
 
 
@@ -67,14 +70,20 @@ def handle_input(message: str) -> str:
         if action == "help":
             return usage()
         elif action == "players":
-            return "Players!"
+            active_players = get_active_players(SYS_LOG)
+            if active_players:
+                return format_active_player_message(active_players)
+            return "No souls currently walk these lands..."
         elif action == "status":
-            return "Status!"
+            return "Coming soon..."
+        elif action == "info":
+            return "Coming soon..."
         else:
             return "By Odin's beard... your language confuses me. (Try '$valheim help' for a list of actions)"
     # Input isn't in the right format! better display the help message
     else:
         return usage()
+
 
 def usage() -> str:
     return """
@@ -83,11 +92,13 @@ Usage: $valheim [action]
 Valid actions:
     players - Shows a list of players currently online.
     status - Shows current server status.
+    info - Shows current server name and ip address.
     help - Shows this message.
 
 Example:
     $valheim players
 """
+
 
 if __name__ == "__main__":
     main()
