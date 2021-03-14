@@ -67,3 +67,25 @@ Mar 14 11:47:52 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/D
 Mar 14 11:47:52 localhost start_valheim.sh[12067]: 03/14/2021 11:47:52: Destroying abandoned non persistent zdo 1555652395:40579 owner 1555652395
 Mar 14 11:47:52 localhost start_valheim.sh[12067]:  
 """
+
+@pytest.fixture
+def log_data_no_zoids():
+  return """
+Mar 14 06:32:05 localhost start_valheim.sh[12067]: Total: 860.463210 ms (FindLiveObjects: 100.000560 ms CreateObjectMapping: 25.237920 ms MarkObjects: 734.115960 ms  DeleteObjects: 1.103200 ms)
+Mar 14 06:35:01 localhost CRON[13810]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Mar 14 06:39:38 localhost systemd[1]: Started Session 1778 of user root.
+Mar 14 06:42:04 localhost start_valheim.sh[12067]: 03/14/2021 06:42:04:  Connections 0 ZDOS:351191  sent:0 recv:0
+Mar 14 06:42:04 localhost start_valheim.sh[12067]:  
+Mar 14 06:42:04 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 06:42:04 localhost start_valheim.sh[12067]: Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Mar 14 06:42:05 localhost start_valheim.sh[12067]: Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 1116798.
+Mar 14 06:42:05 localhost start_valheim.sh[12067]: Total: 845.133610 ms (FindLiveObjects: 99.563960 ms CreateObjectMapping: 25.001810 ms MarkObjects: 719.591680 ms  DeleteObjects: 0.971310 ms)
+Mar 14 06:42:06 localhost start_valheim.sh[12067]: 03/14/2021 06:42:06: clone 1004
+Mar 14 06:42:06 localhost start_valheim.sh[12067]:  
+Mar 14 06:42:06 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 06:42:08 localhost start_valheim.sh[12067]: 03/14/2021 06:42:08: Saved 351191 zdos
+Mar 14 06:42:08 localhost start_valheim.sh[12067]:  
+Mar 14 06:42:08 localhost start_valheim.sh[12067]: (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 35)
+Mar 14 06:42:08 localhost start_valheim.sh[12067]: 03/14/2021 06:42:08: World saved ( 1524.962ms )
+Mar 14 06:42:08 localhost start_valheim.sh[12067]:  
+"""

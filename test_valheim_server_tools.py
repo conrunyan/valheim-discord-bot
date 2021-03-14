@@ -23,7 +23,7 @@ SOFTWARE.
 """
 import pytest
 
-from testing_resources import log_data
+from testing_resources import (log_data, log_data_no_zoids)
 from valheim_server_tools import get_login_events
 
 
@@ -32,7 +32,7 @@ class TestGetActivePlayers:
 
 
 class TestGetLoginEvents:
-    def test_get_login_events_no_zoids(self, log_data):
+    def test_get_login_events_with_valid(self, log_data):
         expected = {
             "692335600": {
                 "username": "Lars",
@@ -53,6 +53,10 @@ class TestGetLoginEvents:
         result = get_login_events(log_data)
         assert expected == result
 
+    def test_get_login_events_no_zoids(self, log_data_no_zoids):
+        expected = {}
+        result = get_login_events(log_data_no_zoids)
+        assert expected == result
 
 class TestGetLogoutEvents:
     pass

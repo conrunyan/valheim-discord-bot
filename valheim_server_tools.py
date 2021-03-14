@@ -47,7 +47,7 @@ def get_login_events(log_contents: str) -> Dict[str, Dict[str, str]]:
     logins_found = [l.groupdict() for l in re_login_zoid.finditer(log_contents)]
     if logins_found:
         return {login.get("zoid"):_create_player_activity_info(login, PlayerAction.LOG_IN) for login in logins_found}
-    return logins_found
+    return dict()
 
 def _create_player_activity_info(found_results: Dict[str, str], action: PlayerAction) -> Dict[str, str]:
     return {
