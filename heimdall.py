@@ -33,6 +33,7 @@ from valheim_server_tools import (
     get_active_players,
     format_active_player_message,
     get_server_status,
+    get_server_info
 )
 
 
@@ -45,7 +46,6 @@ def main():
     load_dotenv()
     start_logger()
     bot_key = os.getenv("TOKEN")
-    # TODO: Add logging!
     logger.info("Starting up Heimdall discord bot!")
     client.run(bot_key)
 
@@ -89,7 +89,7 @@ def handle_input(message: str) -> str:
         elif action == "status":
             return get_server_status()
         elif action == "info":
-            return "Coming soon..."
+            return get_server_info()
         else:
             return "By Odin's beard... your language confuses me. (Try '$valheim help' for a list of actions)"
     # Input isn't in the right format! better display the help message

@@ -21,16 +21,34 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+import logging
 import re
+import subprocess
 
 from typing import Dict
 from subprocess import check_output
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 
 class PlayerAction:
     LOG_IN = "LOG_IN"
     LOG_OUT = "LOG_OUT"
     ONLINE = "ONLINE"
+
+
+def get_server_info():
+    ip_cmd = ["hostname", "-I"]
+    try:
+        results = str(check_output(ip_cmd)).split()
+        logger.info(results)
+        if results:
+            pub_ip = results[0].replace("'", "").replace("b", "")
+        msg = f"Server IP/port: {pub_ip}:2456"
+        return msg
+    except subprocess.CalledProcessError:
+        return "Could not get server IP/port..."
 
 
 def get_server_status():
