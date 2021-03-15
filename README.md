@@ -81,7 +81,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Connor Runyan** - *Initial work* - [https://github.com/conrunyan](https://github.com/conrunyan)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/conrunyan/valheim-discord-bot/graphs/contributors) who participated in this project.
 
 ## License
 
