@@ -82,7 +82,12 @@ def handle_input(message: str) -> str:
         if action == "help":
             return usage()
         elif action == "players":
-            active_players = get_active_players(SYS_LOG)
+            try:
+                active_players = get_active_players(SYS_LOG)
+            except PermissionError as e:
+                msg = f"Could not access file '{SYS_LOG}'\nThe bot did not have permission to read this file, which contains player activity information."
+                logger.error(msg, e)
+                return msg
             if active_players:
                 return format_active_player_message(active_players)
             return "No souls currently walk these lands..."
