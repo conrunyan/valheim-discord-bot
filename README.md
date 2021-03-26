@@ -1,6 +1,6 @@
 # Valheim Discord Bot
 
-This discord bot is intended as tools to help quickly get information about your dedicated Valheim server. It currently only supports the Linux version, as that's the only dedicated server I've used up to this point. 
+This discord bot is intended to provide quick tools to quickly retrieve information about your dedicated Valheim server. It currently only supports the Linux version, as that's the only dedicated server I've used up to this point. 
 
 IMPORTANT NOTE: This bot needs to be running on the same server/container/etc. that your Valheim server is running.
 
