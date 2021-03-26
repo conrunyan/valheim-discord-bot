@@ -90,4 +90,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * PurpleBooth for the [README tempalte](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* Nimdy and the folks working on the (Dedicated Valheim Server Script)[https://github.com/Nimdy/Dedicated_Valheim_Server_Script]
+* Nimdy and the folks working on the [Dedicated Valheim Server Script](https://github.com/Nimdy/Dedicated_Valheim_Server_Script)
