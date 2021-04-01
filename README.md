@@ -16,26 +16,30 @@ If you are new to creating a Discord Bot, the "discord.py" docs are very helpful
 
 What things you need to install the software and how to install them
 
-* Python 3.5.3+
+* Python 3.6+ (Uses Python's formatted strings)
 * Valheim dedicated server running on a Linux machine
+* A new discord Application and associated Bot (see Creating a Bot Account above)
 ```
 python
 ```
-## TODO: Working on this still!
 
 ### Installing
 
-First, we need to set up the Python environment. To do this, execute the following from the project directory:
+First, you need to set up the Python environment. To do this, execute the following from the project directory:
 
 ```
 bash install_heimdall.sh
 ```
+Heimdall.py uses the dotenv library, and looks for a .env file in the same directory. 
+Make a copy of the .env_template file.
+```
+cp .env_template .env
+```
+Using your favorite editor, replace the "<YOUR_TOKEN_HERE>" snippet in the new .env file with your bot's token.
 
-Once that finishes, you can start the bot with this command:
-
+Now you're all set! Run the below command to start up Heimdall!
 ```
 bash start_heimdall.sh
-
 ```
 OPTIONAL
 The discord bot will not run in the background by default. If you want it to run in the background, there are a few options:
