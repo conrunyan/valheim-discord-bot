@@ -17,7 +17,7 @@ If you are new to creating a Discord Bot, the "discord.py" docs are very helpful
 What things you need to install the software and how to install them
 
 * Python 3.5.3+
-* Other things...
+* Valheim dedicated server running on a Linux machine
 ```
 python
 ```
@@ -25,45 +25,35 @@ python
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+First, we need to set up the Python environment. To do this, execute the following from the project directory:
 
 ```
-Give the example
+bash install_heimdall.sh
 ```
 
-And repeat
+Once that finishes, you can start the bot with this command:
 
 ```
-until finished
-```
+bash start_heimdall.sh
 
-End with an example of getting some data out of the system or using it for a little demo
+```
+OPTIONAL
+The discord bot will not run in the background by default. If you want it to run in the background, there are a few options:
+
+1 - Run the bot as a process, sending it to the background with "&"
+```
+bash start_heimdall.sh &
+```
+2 - Setting the bot as a system service using systemd
+```
+#TODO: Add steps on how to make it a service
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
 ```
-Give an example
+pytest test_valheim_server_tools.py
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -75,7 +65,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/conrunyan/valheim-discord-bot/tags). 
 
 ## Authors
 
